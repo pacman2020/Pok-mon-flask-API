@@ -8,6 +8,9 @@
 </head>
 <body>
     <h2>hello world</h2>
-    <p>{{ name }}</p>
+    {% for pokemon in data %}
+        <p>{{ pokemon.name }}</p>
+        <img src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png" alt="{{ pokemon.name }}">
+    {% endfor %}
 </body>
 </html>
