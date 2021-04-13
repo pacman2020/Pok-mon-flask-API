@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
-    <title>home</title>
-</head>
-<body>
-    <div class="container">
-        <h1>PoKemon Classic</h1>
-        {% for pokemon in data %}
-        <div class="cards">
-            <h2>{{ pokemon.name }}</h2>
+{% extends "base.html" %}
+
+{% block title %}list publications{% endblock %}
+
+{% block conteudo %}
+
+<div class="action-list">
+    <a href="#">
+        <button class="btn-new" >new-publication</button>
+    </a>
+    <form class="search" action="#" method="get">
+        <input type="text" name="search" placeholder="which title name" >
+        <button type="submit">seach</button>
+    </form>
+    
+</div>
+
+{% for pokemon in pokemons %}
+    <div class="posts">
+        
+        <div class="post-header">
+            <h3>{{ pokemon.name }}</h3>
             <img width="300" src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png" alt="{{ pokemon.name }}">
         </div>
-        {% endfor %}
+        <div class="post-body">
+            <p><a href="#">veja mais...</a></p>
+        </div>
     </div>
-</body>
-</html>
+{% endfor %}
+{% endblock %}
