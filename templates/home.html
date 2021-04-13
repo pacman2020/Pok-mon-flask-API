@@ -5,27 +5,20 @@
 
 {% block conteudo %}
 
+
 <div class="action-list">
-    <a href="#">
-        <button class="btn-new" >new-publication</button>
-    </a>
     <form class="search" action="#" method="get">
         <input type="text" name="search" placeholder="which title name" >
         <button type="submit">seach</button>
-    </form>
-    
+    </form>   
 </div>
-
+<div class="posts">    
 {% for pokemon in pokemons %}
-    <div class="posts">
-        
         <div class="post-header">
             <h3>{{ pokemon.name }}</h3>
-            <img width="300" src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png" alt="{{ pokemon.name }}">
-        </div>
-        <div class="post-body">
+            <img src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png" alt="{{ pokemon.name }}">
             <p><a href="#">veja mais...</a></p>
         </div>
-    </div>
-{% endfor %}
+        {% endfor %}
+</div>
 {% endblock %}
