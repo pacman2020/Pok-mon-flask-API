@@ -35,3 +35,18 @@ h1{
     font-size: 30px;
     text-align: center;
 }
+
+.container .post-detail{
+    justify-content: center;
+    display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.container .post-detail div{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    font-size: 30px;
+    text-align: center;
+}

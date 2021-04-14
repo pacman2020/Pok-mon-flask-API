@@ -6,13 +6,20 @@
 {% block conteudo %}
 
 
-<div class="post-header">
-    <h3>{{ pokemon.name }}</h3>
-    <p>{{ pokemon.type }}</p>
-    <p>{{ pokemon.weight }}</p>
-    <p>{{ pokemon.abilites1 }}</p>
-    <p>{{ pokemon.abilites2 }}</p>
-    <!-- <img src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png" alt="{{ pokemon.name }}"> -->
+<div class="post-detail">
+    <div>
+        <h3>name: {{ pokemon.name }}</h3>
+        <p>type: {{ pokemon.type }}</p>
+        <p>weight: {{ pokemon.weight }}</p>
+        <p>abilites1: {{ pokemon.abilites1 }}</p>
+        <p>abilites2: {{ pokemon.abilites2 }}</p>
+    </div>
+    <div>
+        <img
+            width="200"
+            src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png" 
+            alt="{{ pokemon.name }}">
+    </div>
 </div>
 
 {% endblock %}
