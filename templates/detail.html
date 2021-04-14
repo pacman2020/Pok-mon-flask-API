@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}detail pokemon{% endblock %}
+
+{% block conteudo %}
+
+
+<div class="post-header">
+    <h3>{{ pokemon.name }}</h3>
+    <p>{{ pokemon.type }}</p>
+    <p>{{ pokemon.weight }}</p>
+    <p>{{ pokemon.abilites1 }}</p>
+    <p>{{ pokemon.abilites2 }}</p>
+    <!-- <img src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png" alt="{{ pokemon.name }}"> -->
+</div>
+
+{% endblock %}
