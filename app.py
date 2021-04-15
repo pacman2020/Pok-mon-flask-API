@@ -1,11 +1,14 @@
 from flask import Flask, url_for, render_template, redirect, jsonify, json, request
 from requests import get
 
+# ?limit=100&offset=200
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
+    limit = 3
+    offset = 6
     search = request.args.get('search')
     
     if search:
@@ -20,12 +23,19 @@ def home():
         )
         return render_template('home.html', pokemons=pokemons)
     
-    pokemonsJson = get('https://pokeapi.co/api/v2/pokemon')
+    url = 'https://pokeapi.co/api/v2/pokemon?limit={}&offset={}'.format(limit, offset)
+    
+    pokemonsJson = get('https://pokeapi.co/api/v2/pokemon?limit=3&offset=6')
     all_pokemons = json.loads(pokemonsJson.content)
+    # print('--->', all_pokemons['results'])
     pokemons = []
     id = 0
     for pokemon in all_pokemons['results']:
-        id += 1
+        
+        # extracting pokemon id by URL
+        id_p = pokemon['url']
+        id = id_p[-2]
+
         pokemons.append(
             {
                 'id': id,
